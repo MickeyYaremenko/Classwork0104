@@ -1,7 +1,7 @@
 package by.htp.equipment;
 
-public class MainEquipment extends Equipment{
-	private Accessory[] accesories;
+public abstract class MainEquipment extends Equipment{
+	protected Accessory[] accesories;
 	
 	public MainEquipment(Category category, String title, Accessory[] access) {
 		super(category, title);

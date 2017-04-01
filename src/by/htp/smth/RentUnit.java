@@ -5,7 +5,7 @@ import by.htp.equipment.Equipment;
 import by.htp.equipment.MainEquipment;
 
 public class RentUnit {
-	private Equipment[] units;
+	private MainEquipment[] units;
 
 	public RentUnit() {
 		this.units = new MainEquipment[3];
@@ -13,20 +13,20 @@ public class RentUnit {
 
 	public void rentMainUnit(MainEquipment... MainEquipment) {
 		for (int i = 0; i < checkEmptyRoom(); i++){
-			addUnit(MainEquipment[i]);
+			addMainUnit(MainEquipment[i]);
 			showRentedUnit(MainEquipment[i]);
 		}
 	}
 	
-	public void rentAccessories(Accessory... accessories){
-		MainEquipment.
+	public void rentAccessories(int position, Accessory... accessories){
+		units[position].setAccesories(accessories);
 	}
 	
 	private void showRentedUnit(Equipment equipment){
 		System.out.println("You've rented:" + equipment);
 	}
 
-	private void addUnit(Equipment equipment){
+	private void addMainUnit(MainEquipment equipment){
 		if (equipment == null){
 			System.out.println("Incorrect equipment entered");
 		} else if (checkEmptyRoom() > 0){
