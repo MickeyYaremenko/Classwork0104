@@ -1,6 +1,6 @@
 package by.htp.equipment;
 
-public class Equipment {
+public abstract class Equipment {
 	private Category category;
 	private String title;
 	private static int counterForID;
@@ -18,7 +18,7 @@ public class Equipment {
 
 	@Override
 	public String toString() {
-		return "Equipment [category=" + category + ", title=" + title + "]";
+		return "Equipment [category=" + category + ", title=" + title + ", id=" + id + "]";
 	}
 	
 	

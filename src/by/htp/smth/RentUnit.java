@@ -1,18 +1,25 @@
 package by.htp.smth;
 
+import by.htp.equipment.Accessory;
 import by.htp.equipment.Equipment;
+import by.htp.equipment.MainEquipment;
 
 public class RentUnit {
 	private Equipment[] units;
 
 	public RentUnit() {
-		this.units = new Equipment[3];
+		this.units = new MainEquipment[3];
 	}
 
-	public void rentUnit(Equipment... equipment) {
+	public void rentMainUnit(MainEquipment... MainEquipment) {
 		for (int i = 0; i < checkEmptyRoom(); i++){
-			addUnit(equipment[i]);
+			addUnit(MainEquipment[i]);
+			showRentedUnit(MainEquipment[i]);
 		}
+	}
+	
+	public void rentAccessories(Accessory... accessories){
+		MainEquipment.
 	}
 	
 	private void showRentedUnit(Equipment equipment){
