@@ -1,5 +1,7 @@
 package by.htp.equipment;
 
+import java.util.Arrays;
+
 public abstract class MainEquipment extends Equipment{
 	protected Accessory[] accesories;
 	
@@ -18,6 +20,12 @@ public abstract class MainEquipment extends Equipment{
 
 	public void setAccesories(Accessory[] accesories) {
 		this.accesories = accesories;
+	}
+
+	@Override
+	public String toString() {
+		return "Equipment [category=" + super.category + ", title=" + super.title + ", id=" + super.id + 
+	", Accesories=" + Arrays.toString(accesories) + "]";
 	}
 	
 	

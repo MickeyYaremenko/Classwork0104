@@ -35,12 +35,14 @@ public class Launcher {
 		System.out.println("Enter main unit to rent:");
 		
 		maximRent.rentMainUnit(skateAdio, rollersIDK);
-		System.out.println("Enter number of elemement to add accessories:");
-		int position = 0;
-		maximRent.rentAccessories(position, giant, quicksilver);
+//		System.out.println("Enter number of elemement to add accessories:");
+//		int position = 0;
+//		maximRent.rentAccessories(position, giant, quicksilver);
 		
 		
+		rentStation.newClient(maxim);
 		
+		System.out.println(rentStation.getMainEquipment()[0]);
 		
 		
 		

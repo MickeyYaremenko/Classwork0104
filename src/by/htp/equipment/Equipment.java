@@ -1,10 +1,10 @@
 package by.htp.equipment;
 
 public abstract class Equipment {
-	private Category category;
-	private String title;
-	private static int counterForID;
-	private final int id;
+	protected Category category;
+	protected String title;
+	protected static int counterForID;
+	protected final int id;
 	
 	{
 		counterForID++;
