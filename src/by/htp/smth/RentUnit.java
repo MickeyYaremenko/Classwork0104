@@ -10,15 +10,19 @@ public class RentUnit {
 	}
 
 	public void rentUnit(Equipment... equipment) {
-		for (int i = 0; i < equipment.length; i++) {
+		for (int i = 0; i < checkEmptyRoom(); i++){
 			addUnit(equipment[i]);
 		}
+	}
+	
+	private void showRentedUnit(Equipment equipment){
+		System.out.println("You've rented:" + equipment);
 	}
 
 	private void addUnit(Equipment equipment){
 		if (equipment == null){
-			System.out.println("Incorrect argument");
-		} else if (checkRoom() > 0){
+			System.out.println("Incorrect equipment entered");
+		} else if (checkEmptyRoom() > 0){
 			int position = 0;
 			while (units[position] != null){
 				position++;
@@ -28,7 +32,7 @@ public class RentUnit {
 		
 	}
 
-	private int checkRoom(){
+	private int checkEmptyRoom(){
 		int emptyRoom = 0;
 		for (Equipment unit : units){
 			if (unit == null){
