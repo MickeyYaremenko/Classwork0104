@@ -8,7 +8,7 @@ public abstract class Accessory extends Equipment{
 
 	@Override
 	public String toString() {
-		return "Accesory [category=" + super.category + ", title=" + super.title + ", id=" + super.id;
+		return "Accesory [category=" + super.category + ", title=" + super.title + ", id=" + super.id + "]";
 	}
 	
 	

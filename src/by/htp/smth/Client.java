@@ -6,9 +6,9 @@ public class Client {
 	private RentUnit rentunit;
 
 	public Client(int passportID, String name) {
-		super();
 		this.passportID = passportID;
 		this.name = name;
+		
 	}
 
 	public int getPassportID() {
