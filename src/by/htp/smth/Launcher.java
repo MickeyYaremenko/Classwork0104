@@ -46,6 +46,7 @@ public class Launcher {
 		alex.showAllAccessories();
 		
 		alex.meetClient(maxim);
+		alex.meetClient(maxim);
 		
 		
 	}

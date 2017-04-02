@@ -1,6 +1,6 @@
 package by.htp.smth;
 
-public class Order {
+public class PrintOrder {
 	
 	
 
