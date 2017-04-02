@@ -16,7 +16,7 @@ public class RentUnit {
 	}
 
 	public void rentMainUnit(MainEquipment... mainEquipment) {
-		for (int i = 0; i < checkEmptyRoom(); i++) {
+		for (int i = 0; i < checkEmptyRoom() && i < mainEquipment.length; i++) {
 			addMainUnit(mainEquipment[i]);
 			// showRentedUnit(MainEquipment[i]);
 		}

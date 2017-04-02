@@ -38,20 +38,49 @@ public class Seller {
 			System.out.println("Something went wrong, check entered data.");
 		}
 
-		for (int i = 0; i < rentStation.getClientBase().length - 1; i++) {
-			if (rentStation.getClientBase()[i] != null){
-			if (client.getPassportID() == rentStation.getClientBase()[i].getPassportID()) {
-				// rentStation.getClientBase()[i].getRentunit();
+		// for (int i = 0; i < rentStation.getClientBase().length - 1; i++) {
+		// if (rentStation.getClientBase()[i] != null) {
+		// if (client.getPassportID() ==
+		// rentStation.getClientBase()[i].getPassportID()) {
+		// // rentStation.getClientBase()[i].getRentunit();
+		if (checkClient(client)) {
+			showAlreadyRentedItems(rentStation.getClientBase()[getClientPosition(client)].getRentUnit());
+			handleAnOrder(rentStation.getClientBase()[getClientPosition(client)].getRentUnit());
+		} else {
 
-				showAlreadyRentedItems(rentStation.getClientBase()[i].getRentunit());
-				handleAnOrder(rentStation.getClientBase()[i].getRentunit());
-			}
-			} else {
-				rentStation.newClient(client);
-			}
+			// }
+			// } else {
+			rentStation.newClient(client);
+			handleAnOrder(rentStation.getClientBase()[rentStation.getClientCounter()-1].getRentUnit());
 		}
+		// }
+		// }
 		// return client.getRentunit();
 
+	}
+
+	private boolean checkClient(Client client) {
+		for (int i = 0; i < rentStation.getClientBase().length - 1; i++) {
+			if (rentStation.getClientBase()[i] != null) {
+				if (client.getPassportID() == rentStation.getClientBase()[i].getPassportID()) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
+	private int getClientPosition(Client client){
+		int position = 0;
+		for (int i = 0; i < rentStation.getClientBase().length - 1; i++) {
+			if (rentStation.getClientBase()[i] != null) {
+				if (client.getPassportID() == rentStation.getClientBase()[i].getPassportID()) {
+					position = i;
+					return position;
+				}
+			}
+		}
+		return position;
 	}
 
 	private void handleAnOrder(RentUnit rentUnit) {
@@ -80,8 +109,8 @@ public class Seller {
 			choiceArrToInt[i] = Integer.parseInt(choiceArr[i]);
 		}
 		if (choiceArrToInt[0] != 0) {
-			System.out.println("Enter # of main item to get accessories for:");
-			int position = sc.nextInt();
+			System.out.println("Enter # of main item to add chosen accessories:");
+			int position = sc.nextInt() - 1;
 			Accessory[] tempAccessories = new Accessory[choiceArrToInt.length];
 			// do {
 			for (int i = 0; i < choiceArrToInt.length; i++) {

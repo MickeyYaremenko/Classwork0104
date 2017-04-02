@@ -54,6 +54,12 @@ public class RentStation {
 	public Client[] getClientBase() {
 		return clientBase;
 	}
+
+	public int getClientCounter() {
+		return clientCounter;
+	}
+	
+	
 	
 	
 

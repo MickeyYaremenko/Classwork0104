@@ -3,12 +3,12 @@ package by.htp.smth;
 public class Client {
 	private int passportID;
 	private String name;
-	private RentUnit rentunit;
+	private RentUnit rentUnit;
 
 	public Client(int passportID, String name) {
 		this.passportID = passportID;
 		this.name = name;
-		
+		this.rentUnit = new RentUnit();
 	}
 
 	public int getPassportID() {
@@ -19,12 +19,12 @@ public class Client {
 		return name;
 	}
 
-	public RentUnit getRentunit() {
-		return rentunit;
+	public RentUnit getRentUnit() {
+		return rentUnit;
 	}
 
-	public void setRentunit(RentUnit rentunit) {
-		this.rentunit = rentunit;
+	public void setRentUnit(RentUnit rentunit) {
+		this.rentUnit = rentunit;
 	}
 
 }

@@ -18,7 +18,6 @@ public class Launcher {
 		Seller alex = new Seller("Alex", rentStation);
 		
 		Client maxim = new Client(1543, "Maxim");
-		RentUnit maximRent = new RentUnit();
 		Category summer = new Category("Summer");
 		
 		Bike bikeStels = new Bike(summer, "Bike Stels 420");
